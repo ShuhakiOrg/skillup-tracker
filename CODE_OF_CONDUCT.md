@@ -67,7 +67,7 @@ This Code of Conduct applies within all project spaces, including:
 
 If you witness or experience any behavior that violates this Code of Conduct, please report it by contacting the maintainers at:
 
-📧 **Contact Email**: `skillup.opensource@gmail.com`  
+📧 **Contact Email**: `arpitgupta7011@gmail.com`  
 🛠️ You may also use GitHub’s built-in **report** feature if needed.
 
 All reports will be reviewed and investigated promptly and fairly. We are committed to protecting the privacy and safety of reporters.
