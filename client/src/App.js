@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import Dashboard from './pages/Dashboard'; // Import your Dashboard component
+import './App.css'; // Keep your main app CSS if it contains global styles
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // The main container for your application, styled with Tailwind CSS classes
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
+      {/*
+        This is where your Dashboard component will be rendered.
+        It will show the loading spinner first, then the content.
+      */}
+      <Dashboard />
     </div>
   );
 }
