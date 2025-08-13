@@ -1,0 +1,58 @@
+/* src/components/LoadingSpinner.css */
+
+/* Spinner Container: Full-screen centering */
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical centering */
+  align-items: center; /* Horizontal centering */
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  gap: 0.75rem; /* Space between spinner and text */
+  background-color: #f9fafb; /* Optional: matches hollow effect background */
+}
+
+/* Modern Gradient Spinner */
+.spinner {
+  border-radius: 50%;
+  position: relative;
+  animation: spin 1.2s linear infinite;
+  background: conic-gradient(
+    #6366f1,
+    #a78bfa,
+    #8b5cf6,
+    #3b82f6,
+    #22d3ee,
+    #6366f1
+  );
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Hollow inner circle */
+.spinner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 70%;
+  height: 70%;
+  background-color: #f9fafb; /* Match background */
+}
+
+/* Smooth spin */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Optional loading text */
+.loading-text {
+  font-size: 1.125rem;
+  color: #374151;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
