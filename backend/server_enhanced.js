@@ -18,7 +18,9 @@ app.use('/api/modules', moduleRoutes);
 app.use('/api/leaderboard', leaderboardRoutes);
 app.use('/api/profiles', profileRoutes);
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI,{
+  dbName:"skillup"
+})
   .then(() => {
     console.log('MongoDB connected');
     app.listen(5000, () => console.log('Server running on port 5000'));
