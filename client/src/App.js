@@ -4,6 +4,7 @@ import './App.css';
 import Leaderboard from './pages/Leaderboard';
 import Profile from './pages/Profile';
 import PublicProfile from './pages/PublicProfile';
+import Dashboard from './pages/Dashboard'; 
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
               <Link to="/profile" className="nav-link">
                 My Profile
               </Link>
+              <Link to="/dashboard" className="nav-link"> {/* ✅ NEW */}
+                Dashboard
+              </Link>
             </div>
           </div>
         </nav>
@@ -31,6 +35,7 @@ function App() {
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/profile/:username" element={<PublicProfile />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </main>
       </div>

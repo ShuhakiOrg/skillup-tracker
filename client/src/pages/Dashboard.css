@@ -1,0 +1,129 @@
+/* Dashboard.css with colors */
+
+/* General Background */
+body {
+  background: linear-gradient(135deg, #f0f4ff, #fafbff);
+  font-family: "Inter", sans-serif;
+}
+
+/* Profile Header Section */
+.profile-header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: white;
+}
+
+.profile-details h1 {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+}
+
+.rank-info {
+  color: #e2e8f0;
+}
+
+.profile-bio {
+  color: #edf2f7;
+}
+
+.edit-profile-btn {
+  background: #48bb78;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+.edit-profile-btn:hover {
+  background: #38a169;
+  transform: scale(1.05);
+}
+
+/* Stats Grid */
+.profile-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.stat-box {
+  background: linear-gradient(135deg, #ffffff, #f7f9fc);
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  text-align: left;
+  transition: transform 0.2s;
+}
+.stat-box:hover {
+  transform: translateY(-4px);
+}
+
+.stat-box .stat-number {
+  font-size: 32px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #718096;
+}
+
+/* Badges */
+.badge-earned {
+  background: linear-gradient(135deg, #fefcbf, #faf089);
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.badge-earned .badge-name {
+  color: #744210;
+  font-weight: 600;
+}
+
+/* Analytics Grid */
+.analytics-item {
+  background: linear-gradient(135deg, #ebf8ff, #bee3f8);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.analytics-number {
+  color: #2b6cb0;
+}
+
+/* Charts Container */
+.charts-section {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.charts-section h3 {
+  color: #2d3748;
+  margin-bottom: 16px;
+}
+
+/* Welcome Message */
+.welcome-message {
+  background: linear-gradient(135deg, #f6e05e, #faf089);
+  color: #744210;
+  border-radius: 12px;
+  padding: 24px;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
