@@ -8,6 +8,8 @@ const Profile = () => {
   const [rank, setRank] = useState(null);
   const [loading, setLoading] = useState(true);
   const [editing, setEditing] = useState(false);
+  const [beatsPercent, setBeatsPercent] = useState(null);
+
   const [formData, setFormData] = useState({
     bio: '',
     isPublicProfile: false,
@@ -25,16 +27,20 @@ const Profile = () => {
       // In a real app, you'd get the user ID from the auth context/token
       const mockUserId = '507f1f77bcf86cd799439011'; // This would come from auth
       
-      const [profileRes, rankRes] = await Promise.all([
+      const [profileRes, rankRes, beatsRes] = await Promise.all([
         axios.get(`http://localhost:5000/api/profiles/my-profile`, {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         }).catch(() => ({ data: getMockProfile() })),
         axios.get(`http://localhost:5000/api/leaderboard/rank/${mockUserId}`)
-          .catch(() => ({ data: { rank: 1, totalUsers: 1 } }))
+          .catch(() => ({ data: { rank: 1, totalUsers: 1 } })),
+        axios.get(`http://localhost:5000/api/leaderboard/my-relative-rank/${mockUserId}`)
+          .catch(() => ({ data: { beatsPercent: 0 } }))
       ]);
 
       setProfile(profileRes.data);
       setRank(rankRes.data);
+      setBeatsPercent(beatsRes.data.beatsPercent || 0);
+
       setFormData({
         bio: profileRes.data.bio || '',
         isPublicProfile: profileRes.data.isPublicProfile || false,
@@ -133,6 +139,9 @@ const Profile = () => {
               </span>
               <span className="rank-info">
                 Rank #{rank?.rank || 1} of {rank?.totalUsers || 1} users
+              </span>
+              <span className="beats-info">
+                Beats {beatsPercent !== null ? `${beatsPercent}%` : '0%'} of users 🎉
               </span>
             </div>
 
