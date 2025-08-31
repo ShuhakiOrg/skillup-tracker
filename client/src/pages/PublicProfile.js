@@ -9,6 +9,7 @@ const PublicProfile = () => {
   const [rank, setRank] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [beatsPercent, setBeatsPercent] = useState(null);
 
   useEffect(() => {
     fetchPublicProfile();
@@ -18,15 +19,20 @@ const PublicProfile = () => {
     try {
       setLoading(true);
       setError(null);
+      const mockUserId = '507f1f77bcf86cd799439011';
       
-      const [profileRes, rankRes] = await Promise.all([
+      const [profileRes, rankRes, beatsRes] = await Promise.all([
         axios.get(`http://localhost:5000/api/profiles/profile/${username}`),
         axios.get(`http://localhost:5000/api/leaderboard/rank/${profile?._id || 'mock'}`)
-          .catch(() => ({ data: { rank: 1, totalUsers: 1 } }))
+          .catch(() => ({ data: { rank: 1, totalUsers: 1 } })),
+        axios.get(`http://localhost:5000/api/leaderboard/my-relative-rank/${mockUserId}`)
+          .catch(() => ({ data: { beatsPercent: 0 } }))
       ]);
 
       setProfile(profileRes.data);
       setRank(rankRes.data);
+      setBeatsPercent(beatsRes.data.beatsPercent || 0);
+
     } catch (error) {
       console.error('Error fetching public profile:', error);
       setError('Profile not found or is private');
@@ -119,6 +125,10 @@ const PublicProfile = () => {
               <span className="rank-info">
                 Rank #{rank?.rank || 1} of {rank?.totalUsers || 1} users
               </span>
+              <span className="beats-info">
+                Beats {beatsPercent !== null ? `${beatsPercent}%` : '0%'} of users 🎉!
+              </span>
+              
             </div>
             
             {profile.bio && (

@@ -13,12 +13,12 @@ const MONGO_URI = process.env.MONGO_URI;
 // Routes
 const authRoutes = require('./routes/auth');
 const moduleRoutes = require('./routes/modules');
-const leaderboardRoutes = require('./routes/leaderboard');
+const leaderboardRoutes = require('./routes/leaderboard_enhanced');
 const profileRoutes = require('./routes/profiles');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/modules', moduleRoutes);
-app.use('/api/leaderboard', leaderboardRoutes);
+app.use('/api/leaderboard', leaderboardRoutes); // changed from leaderboard to leaderboard_enhanced
 app.use('/api/profiles', profileRoutes);
 
 // ✅ MongoDB Connection
