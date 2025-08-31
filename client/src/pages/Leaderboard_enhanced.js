@@ -15,7 +15,7 @@ const Leaderboard = () => {
   const fetchLeaderboard = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(http://localhost:5000/api/leaderboard?limit=);
+      const response = await axios.get("http://localhost:5000/api/leaderboard?limit=");
       setUsers(response.data);
       setError(null);
     } catch (err) {
@@ -31,7 +31,7 @@ const Leaderboard = () => {
       case 1: return '🥇';
       case 2: return '🥈';
       case 3: return '🥉';
-      default: return #;
+      default: return '#';
     }
   };
 
