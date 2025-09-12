@@ -1,0 +1,7 @@
+REACT_APP_apiKey = "your-firebase-api-key"
+REACT_APP_authDomain = "your-app.firebaseapp.com"
+REACT_APP_projectId = "your-firebase-project-id"
+REACT_APP_storageBucket = "your-app.appspot.com"
+REACT_APP_messagingSenderId = "your-messaging-sender-id"
+REACT_APP_appId = "your-firebase-app-id"
+REACT_APP_vapidKey = "your-firebase-vapid-key"

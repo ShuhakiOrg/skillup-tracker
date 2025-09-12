@@ -12,11 +12,16 @@ const authRoutes = require('./routes/auth');
 const moduleRoutes = require('./routes/modules');
 const leaderboardRoutes = require('./routes/leaderboard');
 const profileRoutes = require('./routes/profiles');
+const notificationRoutes = require('./routes/notifications');
+require('./notification_scheduler'); // run cron job
+
+
 
 app.use('/api/auth', authRoutes);
 app.use('/api/modules', moduleRoutes);
 app.use('/api/leaderboard', leaderboardRoutes);
 app.use('/api/profiles', profileRoutes);
+app.use('/api/notifications', notificationRoutes); 
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {

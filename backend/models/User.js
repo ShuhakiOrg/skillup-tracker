@@ -13,7 +13,8 @@ const userSchema = new mongoose.Schema({
   joinDate: { type: Date, default: Date.now },
   totalModulesCompleted: { type: Number, default: 0 },
   currentStreak: { type: Number, default: 0 },
-  longestStreak: { type: Number, default: 0 }
+  longestStreak: { type: Number, default: 0 },
+  fcmTokens: [{ type: String }] 
 });
 
 module.exports = mongoose.model('User', userSchema);

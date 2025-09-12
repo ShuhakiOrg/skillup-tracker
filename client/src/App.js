@@ -4,8 +4,25 @@ import './App.css';
 import Leaderboard from './pages/Leaderboard';
 import Profile from './pages/Profile';
 import PublicProfile from './pages/PublicProfile';
+import Dashboard from './pages/Dashboard'; 
+import { requestNotificationPermission, onMessageListener } from './firebase_notifications';
+import { useEffect } from 'react';
+
+
 
 function App() {
+  useEffect(() => {
+    // Request notification permission & send token to backend
+    requestNotificationPermission();
+
+    // Listen for all foreground messages
+    onMessageListener().then((payload) => {
+    if (payload?.notification) {
+      alert(`${payload.notification.title}\n${payload.notification.body}`);
+    }
+  });
+  }, []); // runs once when app loads
+   
   return (
     <Router>
       <div className="App">
