@@ -15,11 +15,16 @@ const authRoutes = require('./routes/auth');
 const moduleRoutes = require('./routes/modules');
 const leaderboardRoutes = require('./routes/leaderboard_enhanced');
 const profileRoutes = require('./routes/profiles');
+const notificationRoutes = require('./routes/notifications');
+require('./notification_scheduler'); // run cron job
+
+
 
 app.use('/api/auth', authRoutes);
 app.use('/api/modules', moduleRoutes);
 app.use('/api/leaderboard', leaderboardRoutes); // changed from leaderboard to leaderboard_enhanced
 app.use('/api/profiles', profileRoutes);
+app.use('/api/notifications', notificationRoutes); 
 
 // ✅ MongoDB Connection
 mongoose.connect(MONGO_URI, {

@@ -15,12 +15,14 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "firebase-admin": "^13.5.0",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.18.0",
-    "mongoose": "^8.18.0"
+    "mongoose": "^8.18.0",
+    "node-cron": "^4.2.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10",
-    "mongoose": "^8.18.0"
+    "mongoose": "^8.18.0",
+    "nodemon": "^3.1.10"
   }
 }
