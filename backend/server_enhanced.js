@@ -15,7 +15,7 @@ const profileRoutes = require('./routes/profiles');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/modules', moduleRoutes);
-app.use('/api/leaderboard', leaderboardRoutes);
+app.use('/api/leaderboard_enhanced', leaderboardRoutes); // changed from leaderboard to leaderboard_enhanced
 app.use('/api/profiles', profileRoutes);
 
 mongoose.connect(process.env.MONGO_URI)

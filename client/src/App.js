@@ -38,6 +38,9 @@ function App() {
               <Link to="/profile" className="nav-link">
                 My Profile
               </Link>
+              <Link to="/dashboard" className="nav-link"> {/* ✅ NEW */}
+                Dashboard
+              </Link>
             </div>
           </div>
         </nav>
@@ -48,6 +51,7 @@ function App() {
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/profile/:username" element={<PublicProfile />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </main>
       </div>
@@ -68,6 +72,7 @@ function Home() {
           My Profile
         </Link>
       </div>
+
     </div>
   );
 }
