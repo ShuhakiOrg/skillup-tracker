@@ -146,7 +146,10 @@ const Dashboard = () => {
     </div>
   );
 };
+<<<<<<< HEAD
+=======
 // src/pages/Dashboard.js
+>>>>>>> upstream/main
 import React, { useState, useEffect } from 'react';
 import LoadingSpinner from '../components/LoadingSpinner'; // Import the LoadingSpinner component
 
