@@ -7,7 +7,7 @@ import PublicProfile from './pages/PublicProfile';
 import Dashboard from './pages/Dashboard'; 
 import { requestNotificationPermission, onMessageListener } from './firebase_notifications';
 import { useEffect } from 'react';
-
+import Chatbot from './components/Chatbot'; 
 
 
 function App() {
@@ -54,6 +54,8 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </main>
+
+        <Chatbot /> {/* Chatbot component */}
       </div>
     </Router>
   );
