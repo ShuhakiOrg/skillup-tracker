@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Chatbot.css"; // your CSS file
 
-const FAQ = [
+ const FAQ = [
   {
     triggers: ["hi", "hello", "hey", "good morning", "good afternoon", "good evening"],
     response: "Hello 👋! Welcome to <b>SkillUp Tracker</b>. How can I help you today?",
