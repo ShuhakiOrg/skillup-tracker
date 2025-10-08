@@ -1,4 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+
+ import "./Chatbot.css"; // your CSS file
+
+ const FAQ = [
 import "./Chatbot.css"; // your CSS file
 
 const FAQ = [
