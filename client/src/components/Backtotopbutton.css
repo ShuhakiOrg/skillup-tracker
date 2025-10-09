@@ -13,7 +13,7 @@
   z-index: 1000;
 }
 
-.back-to-top-wrapper.show {
+ .back-to-top-wrapper.show {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
