@@ -10,9 +10,13 @@ import { useEffect } from 'react';
 import Chatbot from './components/Chatbot'; 
  loading
 import BackToTopButton from './components/Backtotopbutton';
+footer
+import Footer from './components/Footer';
+
 
 import BackToTopButton from './components/Backtotopbutton'; 
 main
+ main
 
 function App() {
   useEffect(() => {
@@ -60,6 +64,7 @@ function App() {
         </main>
         <Chatbot /> {/* Chatbot component */}
         <BackToTopButton /> {/* Back to Top Button */}
+        <Footer /> {/* Footer component */}
       </div>
     </Router>
   );
