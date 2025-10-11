@@ -8,8 +8,15 @@ import Dashboard from './pages/Dashboard';
 import { requestNotificationPermission, onMessageListener } from './firebase_notifications';
 import { useEffect } from 'react';
 import Chatbot from './components/Chatbot'; 
+ loading
 import BackToTopButton from './components/Backtotopbutton';
+footer
 import Footer from './components/Footer';
+
+
+import BackToTopButton from './components/Backtotopbutton'; 
+main
+ main
 
 function App() {
   useEffect(() => {
