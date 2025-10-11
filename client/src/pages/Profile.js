@@ -94,11 +94,13 @@ const Profile = () => {
     const progress = profile.xp - currentLevelXP;
     return Math.min((progress / (xpForNextLevel - currentLevelXP)) * 100, 100);
   };
-
+const loadingSvg = process.env.PUBLIC_URL + "/loading1.svg";
   if (loading) {
     return (
-      <div className="profile-container">
-        <div className="loading">Loading profile...</div>
+      <div className="profile-container1">
+        <div className="loading">
+          <img src={loadingSvg} alt="Loading..." className="loading-icon" />
+        </div>
       </div>
     );
   }

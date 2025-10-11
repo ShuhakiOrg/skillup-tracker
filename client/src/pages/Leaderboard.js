@@ -63,11 +63,13 @@ const Leaderboard = () => {
     if (level >= 20) return '#CD7F32'; // Bronze
     return '#4CAF50'; // Green
   };
-
+const loadingSvg = process.env.PUBLIC_URL + "/loading1.svg";
   if (loading) {
     return (
-      <div className="leaderboard-container">
-        <div className="loading">Loading leaderboard...</div>
+      <div className="leaderboard-container1">
+        <div className="loading">
+          <img src={loadingSvg} alt="Loading..." className="loading-icon" />
+        </div>
       </div>
     );
   }
