@@ -7,7 +7,6 @@ import {
   LineChart, Line, ResponsiveContainer
 } from "recharts";
 import "./Dashboard.css";
-
 const Dashboard = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -52,8 +51,15 @@ const Dashboard = () => {
     ],
     lastActivityDate: new Date(),
   });
-
-  if (loading) return <div className="dashboard">Loading Dashboard...</div>;
+const loadingSvg = process.env.PUBLIC_URL + "/loading1.svg";
+    // ✅ Loading Screen
+  if (loading)
+    return (
+      <div className="dashboard-loading">
+        <img src={loadingSvg} alt="Loading..." className="loading-icon" />
+        {/* <p>Loading Dashboard...</p> */}
+      </div>
+    );
   if (!data) return <div className="dashboard">No data available.</div>;
 
   return (
