@@ -9,6 +9,7 @@ import { requestNotificationPermission, onMessageListener } from './firebase_not
 import { useEffect } from 'react';
 import Chatbot from './components/Chatbot'; 
 import BackToTopButton from './components/Backtotopbutton';
+import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
@@ -56,6 +57,7 @@ function App() {
         </main>
         <Chatbot /> {/* Chatbot component */}
         <BackToTopButton /> {/* Back to Top Button */}
+        <Footer /> {/* Footer component */}
       </div>
     </Router>
   );
