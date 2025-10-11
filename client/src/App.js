@@ -8,8 +8,7 @@ import Dashboard from './pages/Dashboard';
 import { requestNotificationPermission, onMessageListener } from './firebase_notifications';
 import { useEffect } from 'react';
 import Chatbot from './components/Chatbot'; 
-import BackToTopButton from './components/Backtotopbutton';
-
+import BackToTopButton from './components/Backtotopbutton'; 
 
 function App() {
   useEffect(() => {
@@ -67,6 +66,7 @@ function Home() {
     <div className="home">
       <h1>Welcome to SkillUp Tracker</h1>
       <p>Track your learning progress and compete with others!</p>
+      
       <div className="home-actions">
         <Link to="/leaderboard" className="btn btn-primary">
           View Leaderboard
@@ -75,7 +75,37 @@ function Home() {
           My Profile
         </Link>
       </div>
-
+          <section id="features" className="features-section">
+  <div className="features-content">
+    <h2>Key Features</h2>
+    <div className="features-grid">
+      <div className="feature">
+        <h3>👤 Secure User Accounts</h3>
+        <p>Register and log in safely with JWT-based authentication to keep your progress private.</p>
+      </div>
+      <div className="feature">
+        <h3>🎯 Dynamic Goal Setting</h3>
+        <p>Create, edit, and delete your learning goals with full control to adapt to your evolving needs.</p>
+      </div>
+      <div className="feature">
+        <h3>🔗 Resource Hub</h3>
+        <p>Keep materials organized by adding relevant links from blogs, YouTube, and more to each goal.</p>
+      </div>
+      <div className="feature">
+        <h3>📓 Daily Progress Logging</h3>
+        <p>Keep a daily or weekly log of your efforts and achievements to maintain momentum.</p>
+      </div>
+      <div className="feature">
+        <h3>⭐ Earn XP Points</h3>
+        <p>Stay motivated by earning experience points for every goal you complete, making learning fun.</p>
+      </div>
+      <div className="feature">
+        <h3>📊 Visual Dashboard</h3>
+        <p>Get a clear overview of your journey with a simple dashboard summarizing your goals and progress.</p>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   );
 }
