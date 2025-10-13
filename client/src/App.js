@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 import Chatbot from './components/Chatbot'; 
 import BackToTopButton from './components/Backtotopbutton';
 import Footer from './components/Footer';
-
+import FAQ from './components/FAQ';
 function App() {
   useEffect(() => {
     // Request notification permission & send token to backend
@@ -108,6 +108,7 @@ function Home() {
     </div>
   </div>
 </section>
+      <FAQ /> {/* FAQ component */}
     </div>
   );
 }
