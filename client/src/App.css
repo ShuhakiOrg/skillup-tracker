@@ -312,6 +312,182 @@ body {
   color: var(--text-secondary);
   line-height: 1.6;
   font-size: 0.95rem;
+ }
+/*WHY TO CHOOSE SECTION */
+/* --- ABOUT/WHY CHOOSE SECTION --- */
+.about-section {
+  padding: 5rem 2rem;
+  background: var(--bg-primary);
+  margin: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: var(--gradient-primary);
+  opacity: 0.03;
+  z-index: 0;
+}
+
+body.dark-theme .about-section::before {
+  opacity: 0.05;
+}
+
+.section-content {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 3rem;
+  background: var(--bg-card);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  transition: all 0.4s ease;
+}
+
+.section-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 48px var(--shadow-hover);
+}
+
+.section-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-headings);
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+
+.section-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  animation: expandWidth 0.8s ease-out;
+}
+
+.section-content p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  /* margin: 40; */
+  font-weight: 400;
+}
+
+/* Decorative elements */
+.section-content::before {
+  content: '💡';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  background: var(--bg-card);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  border: 3px solid var(--border-color);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes expandWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* Responsive styles for About section */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 4rem 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .section-content {
+    padding: 2.5rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .section-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .section-content::before {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    top: -15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 3rem 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .section-content {
+    padding: 2rem 1rem;
+    border-radius: 12px;
+  }
+
+  .section-content h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .section-content h2::after {
+    width: 80%;
+  }
+
+  .section-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .section-content::before {
+    font-size: 1.75rem;
+    width: 50px;
+    height: 50px;
+    top: -12px;
+  }
 }
 
 /* --- 5. BUTTONS --- */
