@@ -11,6 +11,8 @@ import BackToTopButton from './components/Backtotopbutton';
 import Footer from './components/Footer';
 import FAQ from './components/FAQ';
 import ThemeToggle from './components/ThemeToggle';
+import Stats from './components/Stats'; 
+import Testimonials from './components/Testimonials'; 
 
 
 function App() {
@@ -114,6 +116,8 @@ function Home() {
         </div>
       </section>
 
+       {/* ✅ NEW: Stats Section */}
+      <Stats />
 
       {/* Features Section */}
   <section id="features" className="features-section">
@@ -147,6 +151,8 @@ function Home() {
     </div>
   </div>
 </section>
+     {/* ✅ NEW: Testimonials Section */}
+      <Testimonials />
       <FAQ /> {/* FAQ component */}
     </div>
   );
