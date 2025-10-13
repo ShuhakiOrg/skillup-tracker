@@ -1,239 +1,219 @@
+/* --- 1. THEME VARIABLES & GLOBAL STYLES --- */
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/* Light Theme (Default) */
+:root {
+  --bg-primary: #f0f2f5;
+  --bg-secondary: #f5f7fa;
+  --bg-card: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-headings: #2c3e50;
+  --text-inverted: #ffffff;
+  --border-color: #dee2e6;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+  --primary-accent: #667eea;
+  --primary-accent-hover: #5568d3;
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --navbar-bg: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+  --navbar-border: rgba(255, 255, 255, 0.2);
+  --feature-bg: #ffffff;
+  --feature-hover-shadow: rgba(102, 126, 234, 0.2);
+  --btn-secondary-bg: #ffffff;
+  --btn-secondary-hover: #667eea;
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+}
+
+/* Dark Theme */
+body.dark-theme {
+  --bg-primary: #0f0f0f;
+  --bg-secondary: #1a1a1a;
+  --bg-card: #1e1e1e;
+  --text-primary: #e4e4e7;
+  --text-secondary: #a1a1aa;
+  --text-headings: #f4f4f5;
+  --text-inverted: #ffffff;
+  --border-color: #3f3f46;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --shadow-hover: rgba(0, 0, 0, 0.6);
+  --primary-accent: #8b5cf6;
+  --primary-accent-hover: #7c3aed;
+  --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  --navbar-bg: linear-gradient(135deg, rgba(139, 92, 246, 0.95), rgba(236, 72, 153, 0.95));
+  --navbar-border: rgba(255, 255, 255, 0.1);
+  --feature-bg: #27272a;
+  --feature-hover-shadow: rgba(139, 92, 246, 0.3);
+  --btn-secondary-bg: #27272a;
+  --btn-secondary-hover: #8b5cf6;
+  --overlay-bg: rgba(0, 0, 0, 0.7);
+}
+
 /* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f5f7fa;
-  color: #333;
+  line-height: 1.6;
 }
 
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--bg-primary);
 }
 
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
-
-/* Basic Body Styling */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    background-color: #f0f2f5; /* A light background to see the navbar shadow */
-}
-
-/* --- Enhanced Navbar Styling ---
-  - Added a backdrop-filter for a modern "frosted glass" effect.
-  - Added a subtle border-bottom to complement the glass effect.
-  - Softened the box-shadow for a more refined look.
-*/
+/* --- 2. ENHANCED NAVBAR STYLING --- */
 .navbar {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)); /* Added slight transparency */
-    padding: 1rem 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Softer, more modern shadow */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    -webkit-backdrop-filter: blur(8px); /* For Safari */
-    backdrop-filter: blur(8px); /* Frosted glass effect */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--navbar-bg);
+  padding: 1rem 0;
+  box-shadow: 0 4px 30px var(--shadow-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--navbar-border);
 }
 
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* --- Enhanced Nav Logo ---
-  - Added a subtle text-shadow on hover for a gentle "glow" effect.
-  - Increased transition duration for a smoother feel.
-*/
 .nav-logo {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
+  color: var(--text-inverted);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: transform 0.3s ease, text-shadow 0.3s ease, filter 0.3s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .nav-logo:hover {
-    transform: scale(1.05);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  filter: brightness(1.1);
 }
 
 .nav-menu {
-    display: flex;
-    list-style: none; /* Removed default list bullets */
-    margin: 0;
-    padding: 0;
-    gap: 1rem; /* Slightly reduced gap for a tighter look */
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
 }
 
-/* --- Enhanced Nav Link ---
-  - Set position to relative to act as a container for the ::after pseudo-element.
-  - Added an ::after pseudo-element to create an animated underline effect on hover.
-  - Added an .active class for styling the current page link.
-*/
 .nav-link {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden; /* Ensures the pseudo-element doesn't spill out */
+  color: var(--text-inverted);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* The animated underline */
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
 .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    transform: translateX(-101%);
-    transition: transform 0.3s ease-in-out;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-inverted);
+  transform: translateX(-101%);
+  transition: transform 0.3s ease-in-out;
 }
 
 .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.nav-link:hover::before {
+  transform: translateX(0);
 }
 
 .nav-link:hover::after {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
-/* Style for the active link (current page) */
 .nav-link.active {
-    background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
+
 .nav-link.active::after {
-    transform: translateX(0); /* Keep the underline visible */
+  transform: translateX(0);
 }
 
-/* Hamburger menu toggle - hidden on larger screens */
-.nav-toggle {
-    display: none;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    padding: 0;
-    z-index: 1001; /* Must be above nav-menu */
-}
-
-/* --- Responsive Styles for Mobile --- */
-@media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 70%;
-        height: 100vh;
-        background: linear-gradient(135deg, #667eea, #764ba2);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    }
-    
-    .nav-menu.nav-menu--visible {
-        transform: translateX(0);
-    }
-
-    .nav-link {
-        font-size: 1.25rem;
-    }
-    
-    .nav-toggle {
-        display: block; /* Show the hamburger icon */
-        width: 25px;
-        height: 21px;
-        position: relative;
-    }
-    
-    .hamburger,
-    .hamburger::before,
-    .hamburger::after {
-        content: '';
-        display: block;
-        background-color: white;
-        height: 3px;
-        width: 100%;
-        border-radius: 2px;
-        transition: all 0.3s ease-in-out;
-        position: absolute;
-    }
-    
-    .hamburger::before {
-        top: -8px;
-    }
-    
-    .hamburger::after {
-        bottom: -8px;
-    }
-    
-    /* Animation for hamburger to 'X' */
-    .nav-toggle.is-active .hamburger {
-        background-color: transparent; /* Middle bar disappears */
-    }
-    
-    .nav-toggle.is-active .hamburger::before {
-        transform: translateY(8px) rotate(45deg);
-    }
-    
-    .nav-toggle.is-active .hamburger::after {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-}
-
-/* Main Content */
+/* --- 3. MAIN CONTENT & HOME PAGE --- */
 .main-content {
   flex: 1;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   width: 100%;
+  background-color: var(--bg-primary);
 }
 
-/* Home Page */
 .home {
   text-align: center;
   padding: 4rem 2rem;
+  background-color: var(--bg-primary);
 }
 
 .home h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  animation: fadeInUp 0.6s ease-out;
 }
 
 .home p {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--text-secondary);
   margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+  animation: fadeInUp 0.6s ease-out 0.2s both;
 }
 
 .home-actions {
@@ -241,114 +221,318 @@ body {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  animation: fadeInUp 0.6s ease-out 0.4s both;
 }
 
-
+/* --- 4. FEATURES SECTION --- */
 .features-section {
-    padding: 4rem 2rem;
-    background: #f5f7fa;
-    transition: all 0.3s ease;
+  padding: 4rem 2rem;
+  background: var(--bg-secondary);
+  margin-top: 2rem;
+  border-radius: 16px;
+}
+
+.features-content {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .features-section h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-    color: #2c3e50;
-    transition: all 0.3s ease;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-headings);
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.features-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
 }
 
 .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
 }
 
 .feature {
-    padding: 2rem;
-    background: white;
-    color: #2c3e50;
-    border-radius:  8px;
-    transition: all 0.3s ease;
-    text-align: center;
-    box-shadow:  0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  background: var(--feature-bg);
+  color: var(--text-primary);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
 .feature:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px var(--feature-hover-shadow);
+  border-color: var(--primary-accent);
+}
+
+.feature:hover::before {
+  transform: scaleX(1);
 }
 
 .feature h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
+  color: var(--text-headings);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .feature p {
-    color: #2c3e50;
-    transition: all 0.3s ease;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
-/* Buttons */
+/* --- 5. BUTTONS --- */
 .btn {
-  padding: 0.75rem 1.5rem;
+  padding: 0.85rem 1.75rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   display: inline-block;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: var(--gradient-primary);
+  color: var(--text-inverted);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  position: relative;
+  z-index: 1;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+body.dark-theme .btn-primary {
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+body.dark-theme .btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
 }
 
 .btn-secondary {
-  background: white;
-  color: #667eea;
-  border: 2px solid #667eea;
+  background: var(--btn-secondary-bg);
+  color: var(--primary-accent);
+  border: 2px solid var(--primary-accent);
+  position: relative;
+  z-index: 1;
 }
 
 .btn-secondary:hover {
-  background: #667eea;
-  color: white;
-  transform: translateY(-2px);
+  background: var(--btn-secondary-hover);
+  color: var(--text-inverted);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px var(--feature-hover-shadow);
 }
 
-/* Loading */
+/* --- 6. LOADING & ERROR STATES --- */
 .loading {
   text-align: center;
-  padding: 2rem;
+  padding: 3rem;
   font-size: 1.1rem;
-  color: #666;
+  color: var(--text-secondary);
 }
 
-/* Responsive Design */
+.error {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #ef4444;
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+/* --- 7. ANIMATIONS --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* --- 8. RESPONSIVE HAMBURGER MENU --- */
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  z-index: 1001;
+  position: relative;
+}
+
 @media (max-width: 768px) {
-  .nav-container {
-    padding: 0 1rem;
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75%;
+    max-width: 350px;
+    height: 100vh;
+    background: var(--navbar-bg);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: -5px 0 20px var(--shadow-color);
+    backdrop-filter: blur(10px);
   }
   
-  .nav-menu {
-    gap: 1rem;
+  body.dark-theme .nav-menu {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.98), rgba(236, 72, 153, 0.98));
+  }
+  
+  .nav-menu.nav-menu--visible {
+    transform: translateX(0);
+  }
+
+  .nav-link {
+    font-size: 1.25rem;
+    width: 80%;
+    text-align: center;
+    padding: 1rem 1.5rem;
+  }
+  
+  .nav-toggle {
+    display: block;
+    width: 28px;
+    height: 24px;
+    position: relative;
+  }
+  
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    display: block;
+    background-color: var(--text-inverted);
+    height: 3px;
+    width: 100%;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+  }
+  
+  .hamburger {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .hamburger::before {
+    top: -10px;
+  }
+  
+  .hamburger::after {
+    bottom: -10px;
+  }
+  
+  .nav-toggle.is-active .hamburger {
+    background-color: transparent;
+  }
+  
+  .nav-toggle.is-active .hamburger::before {
+    transform: translateY(10px) rotate(45deg);
+  }
+  
+  .nav-toggle.is-active .hamburger::after {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  .nav-container {
+    padding: 0 1.5rem;
   }
   
   .main-content {
-    padding: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .home {
+    padding: 3rem 1.5rem;
   }
   
   .home h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+  
+  .home p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
   }
   
   .home-actions {
@@ -360,15 +544,77 @@ body {
     width: 100%;
     max-width: 300px;
   }
+
+  .features-section {
+    padding: 3rem 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .features-section h2 {
+    font-size: 2rem;
+  }
+
+  .features-grid {
+    gap: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .nav-menu {
-    flex-direction: column;
-    gap: 0.5rem;
+  .nav-container {
+    padding: 0 1rem;
   }
-  
+
+  .nav-logo {
+    font-size: 1.25rem;
+  }
+
   .home {
     padding: 2rem 1rem;
   }
+
+  .home h1 {
+    font-size: 2rem;
+  }
+
+  .home p {
+    font-size: 1rem;
+  }
+
+  .features-section {
+    padding: 2.5rem 1rem;
+    border-radius: 12px;
+  }
+
+  .features-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .feature {
+    padding: 1.5rem;
+  }
+
+  .feature h3 {
+    font-size: 1.1rem;
+  }
+
+  .feature p {
+    font-size: 0.9rem;
+  }
+}
+
+/* --- 9. SMOOTH SCROLLING --- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- 10. SELECTION COLOR --- */
+::selection {
+  background: var(--primary-accent);
+  color: var(--text-inverted);
+}
+
+::-moz-selection {
+  background: var(--primary-accent);
+  color: var(--text-inverted);
 }

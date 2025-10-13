@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Leaderboard from './pages/Leaderboard';
@@ -6,12 +6,34 @@ import Profile from './pages/Profile';
 import PublicProfile from './pages/PublicProfile';
 import Dashboard from './pages/Dashboard'; 
 import { requestNotificationPermission, onMessageListener } from './firebase_notifications';
-import { useEffect } from 'react';
 import Chatbot from './components/Chatbot'; 
 import BackToTopButton from './components/Backtotopbutton';
 import Footer from './components/Footer';
 import FAQ from './components/FAQ';
+import ThemeToggle from './components/ThemeToggle';
+
+
 function App() {
+   const [theme, setTheme] = useState(() => {
+    // Check localStorage for a saved theme, otherwise default to 'light'
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme || 'light';
+  });
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  };
+  useEffect(() => {
+    // Clear any existing theme classes from the body
+    document.body.className = '';
+    // Add the current theme class (e.g., 'dark-theme')
+    document.body.classList.add(`${theme}-theme`);
+    // Save the theme preference to localStorage
+    localStorage.setItem('theme', theme);
+  }, [theme]); // This code runs every time the 'theme' state changes
+
+
   useEffect(() => {
     // Request notification permission & send token to backend
     requestNotificationPermission();
@@ -43,6 +65,7 @@ function App() {
                 Dashboard
               </Link>
             </div>
+            <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
           </div>
         </nav>
 
