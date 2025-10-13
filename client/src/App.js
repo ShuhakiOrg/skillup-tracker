@@ -7,13 +7,23 @@ import PublicProfile from './pages/PublicProfile';
 import Dashboard from './pages/Dashboard'; 
 import { requestNotificationPermission, onMessageListener } from './firebase_notifications';
 import Chatbot from './components/Chatbot'; 
+ loading
 import BackToTopButton from './components/Backtotopbutton';
+
 import Footer from './components/Footer';
 import FAQ from './components/FAQ';
 import ThemeToggle from './components/ThemeToggle';
 import Stats from './components/Stats'; 
 import Testimonials from './components/Testimonials'; 
 
+footer
+import Footer from './components/Footer';
+ main
+
+
+import BackToTopButton from './components/Backtotopbutton'; 
+main
+ main
 
 function App() {
    const [theme, setTheme] = useState(() => {
@@ -103,6 +113,7 @@ function Home() {
         </Link>
       </div>
 
+
       {/* Why to choose section */}  
        {/*  about section */}
 
@@ -121,6 +132,9 @@ function Home() {
 
       {/* Features Section */}
   <section id="features" className="features-section">
+
+          <section id="features" className="features-section">
+
   <div className="features-content">
     <h2>Key Features</h2>
     <div className="features-grid">
@@ -151,9 +165,11 @@ function Home() {
     </div>
   </div>
 </section>
+
      {/* ✅ NEW: Testimonials Section */}
       <Testimonials />
       <FAQ /> {/* FAQ component */}
+
     </div>
   );
 }
