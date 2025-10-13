@@ -148,6 +148,10 @@
 
     /* Center the social icons on mobile */
     .social-icons {
+
           justify-content: center;
+
+        justify-content: center;
+
     }
 }

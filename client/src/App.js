@@ -7,11 +7,20 @@ import PublicProfile from './pages/PublicProfile';
 import Dashboard from './pages/Dashboard'; 
 import { requestNotificationPermission, onMessageListener } from './firebase_notifications';
 import Chatbot from './components/Chatbot'; 
+ loading
 import BackToTopButton from './components/Backtotopbutton';
+
 import Footer from './components/Footer';
 import FAQ from './components/FAQ';
 import ThemeToggle from './components/ThemeToggle';
 
+footer
+import Footer from './components/Footer';
+
+
+import BackToTopButton from './components/Backtotopbutton'; 
+main
+ main
 
 function App() {
    const [theme, setTheme] = useState(() => {
@@ -132,6 +141,8 @@ function Home() {
   </div>
 </section>
       <FAQ /> {/* FAQ component */}
+
+
     </div>
   );
 }
