@@ -8,6 +8,7 @@ import {
 } from "recharts";
 import "./Dashboard.css";
 const Dashboard = () => {
+
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
