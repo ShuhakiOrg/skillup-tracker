@@ -18,6 +18,7 @@ footer
 import Footer from './components/Footer';
 
 
+
 import BackToTopButton from './components/Backtotopbutton'; 
 main
  main
@@ -109,7 +110,27 @@ function Home() {
           My Profile
         </Link>
       </div>
+
+
+      {/* Why to choose section */}  
+       {/*  about section */}
+
+      <section id="about" className="about-section">
+        <div className="section-content">
+          <h2>Why Choose Skillup-Tracker?</h2>
+          <p>
+          Because learning shouldn’t be boring — it should feel like a game you love to win!
+          Track your growth, compete with others and stay unstoppable on your learning journey.
+          </p>
+        </div>
+      </section>
+
+
+      {/* Features Section */}
+  <section id="features" className="features-section">
+
           <section id="features" className="features-section">
+
   <div className="features-content">
     <h2>Key Features</h2>
     <div className="features-grid">
@@ -140,6 +161,8 @@ function Home() {
     </div>
   </div>
 </section>
+
+
       <FAQ /> {/* FAQ component */}
 
 
