@@ -88,14 +88,18 @@ body {
 }
 
 .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+/* --- Enhanced Nav Logo ---
+  - Added a subtle text-shadow on hover for a gentle "glow" effect.
+  - Increased transition duration for a smoother feel.
+*/
 .nav-logo {
   color: var(--text-inverted);
   text-decoration: none;
@@ -119,6 +123,11 @@ body {
   gap: 0.5rem;
 }
 
+/* --- Enhanced Nav Link ---
+  - Set position to relative to act as a container for the ::after pseudo-element.
+  - Added an ::after pseudo-element to create an animated underline effect on hover.
+  - Added an .active class for styling the current page link.
+*/
 .nav-link {
   color: var(--text-inverted);
   text-decoration: none;
@@ -158,6 +167,45 @@ body {
 .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-2px);
+
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Ensures the pseudo-element doesn't spill out */
+}
+
+/* The animated underline */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: translateX(-101%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-link:hover::after {
+    transform: translateX(0);
+}
+
+/* Style for the active link (current page) */
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+.nav-link.active::after {
+    transform: translateX(0); /* Keep the underline visible */
 }
 
 .nav-link:hover::before {
