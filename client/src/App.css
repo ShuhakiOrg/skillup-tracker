@@ -283,11 +283,7 @@ body {
     
     .nav-toggle.is-active .hamburger::after {
         transform: translateY(-8px) rotate(-45deg);
-
     }
-
-
-  }
 
 }
 

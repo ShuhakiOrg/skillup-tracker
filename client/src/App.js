@@ -18,11 +18,17 @@ import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import FAQ from './components/FAQ';
 import ThemeToggle from './components/ThemeToggle';
+testimonial
+import Stats from './components/Stats'; 
+import Testimonials from './components/Testimonials'; 
+
 import Footer from './components/Footer';
 import FAQ from './components/FAQ';
 
+main
 
 import Footer from './components/Footer';
+ main
 
 
 
@@ -163,9 +169,11 @@ function Home() {
     </div>
   </div>
 </section>
+
      {/* ✅ NEW: Testimonials Section */}
       <Testimonials />
       <FAQ /> {/* FAQ component */}
+
     </div>
   );
 }
