@@ -116,6 +116,48 @@ function Home() {
         </div>
       </section>
 
+      
+      {/* ✅ How It Works Section - ADD THIS */}
+      <section className="how-it-works-section">
+        <div className="how-it-works-content">
+          <div className="how-it-works-header">
+            <h2 className="how-it-works-title">How It Works</h2>
+            <p className="how-it-works-subtitle">
+              Start your learning journey in three simple steps
+            </p>
+          </div>
+          
+          <div className="steps-container">
+            <div className="step-card">
+              <div className="step-number">1</div>
+              <h3 className="step-title">Create Your Goals</h3>
+              <p className="step-description">
+                Set up your learning objectives with clear targets. Add resources, 
+                deadlines, and track what matters most to your growth.
+              </p>
+            </div>
+            
+            <div className="step-card">
+              <div className="step-number">2</div>
+              <h3 className="step-title">Track Your Progress</h3>
+              <p className="step-description">
+                Log your daily achievements and watch your progress grow. 
+                Earn XP points for every milestone you complete.
+              </p>
+            </div>
+            
+            <div className="step-card">
+              <div className="step-number">3</div>
+              <h3 className="step-title">Compete & Achieve</h3>
+              <p className="step-description">
+                Climb the leaderboard, compete with peers, and celebrate 
+                your success as you master new skills.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
        {/* ✅ NEW: Stats Section */}
       <Stats />
 
