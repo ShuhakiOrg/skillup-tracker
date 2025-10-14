@@ -74,7 +74,6 @@ body {
   background-color: var(--bg-primary);
 }
 
-
 /* --- 2. ENHANCED NAVBAR STYLING --- */
 .navbar {
   background: var(--navbar-bg);
@@ -86,33 +85,6 @@ body {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--navbar-border);
-
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
-
-/* Basic Body Styling */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    background-color: #f0f2f5; /* A light background to see the navbar shadow */
-}
-
-/* --- Enhanced Navbar Styling ---
-  - Added a backdrop-filter for a modern "frosted glass" effect.
-  - Added a subtle border-bottom to complement the glass effect.
-  - Softened the box-shadow for a more refined look.
-*/
-.navbar {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)); /* Added slight transparency */
-    padding: 1rem 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Softer, more modern shadow */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    -webkit-backdrop-filter: blur(8px); /* For Safari */
-    backdrop-filter: blur(8px); /* Frosted glass effect */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
 }
 
 .nav-container {
@@ -129,7 +101,6 @@ body {
   - Increased transition duration for a smoother feel.
 */
 .nav-logo {
-
   color: var(--text-inverted);
   text-decoration: none;
   font-size: 1.5rem;
@@ -150,26 +121,6 @@ body {
   margin: 0;
   padding: 0;
   gap: 0.5rem;
-
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
-}
-
-.nav-logo:hover {
-    transform: scale(1.05);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none; /* Removed default list bullets */
-    margin: 0;
-    padding: 0;
-    gap: 1rem; /* Slightly reduced gap for a tighter look */
-
 }
 
 /* --- Enhanced Nav Link ---
@@ -178,7 +129,6 @@ body {
   - Added an .active class for styling the current page link.
 */
 .nav-link {
-
   color: var(--text-inverted);
   text-decoration: none;
   font-weight: 500;
@@ -355,6 +305,22 @@ body {
   transform: translateX(0);
 }
 
+.nav-link:hover::before {
+  transform: translateX(0);
+}
+
+.nav-link:hover::after {
+  transform: translateX(0);
+}
+
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link.active::after {
+  transform: translateX(0);
+}
 
 /* --- 3. MAIN CONTENT & HOME PAGE --- */
 .main-content {
@@ -669,150 +635,7 @@ body.dark-theme .about-section::before {
   }
 }
 
-/* --- 4. FEATURES SECTION --- */
-.features-section {
-  padding: 4rem 2rem;
-  background: var(--bg-secondary);
-  margin-top: 2rem;
-  border-radius: 16px;
-}
-
-.features-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.features-section h2 {
-  text-align: center;
-  margin-bottom: 3rem;
-  color: var(--text-headings);
-  font-size: 2.5rem;
-  font-weight: 700;
-  position: relative;
-  padding-bottom: 1rem;
-}
-
-.features-section h2::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: var(--gradient-primary);
-  border-radius: 2px;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 1rem 0;
-}
-
-
-.feature {
-  padding: 2rem;
-  background: var(--feature-bg);
-  color: var(--text-primary);
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 6px var(--shadow-color);
-  transition: all 0.3s ease;
-  border: 1px solid var(--border-color);
-  position: relative;
-  overflow: hidden;
-}
-
-.feature::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--gradient-primary);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.feature:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px var(--feature-hover-shadow);
-  border-color: var(--primary-accent);
-}
-
-.feature:hover::before {
-  transform: scaleX(1);
-}
-
-.feature h3 {
-  color: var(--text-headings);
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
-.feature p {
-  color: var(--text-secondary);
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
 /* --- 5. BUTTONS --- */
-
-
-/* --- 5. BUTTONS --- */
-
-
-.features-section {
-    padding: 4rem 2rem;
-    background: #f5f7fa;
-    transition: all 0.3s ease;
-}
-
-.features-section h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-    color: #2c3e50;
-    transition: all 0.3s ease;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.feature {
-    padding: 2rem;
-    background: white;
-    color: #2c3e50;
-    border-radius:  8px;
-    transition: all 0.3s ease;
-    text-align: center;
-    box-shadow:  0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.feature:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-}
-
-.feature h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
-}
-
-.feature p {
-    color: #2c3e50;
-    transition: all 0.3s ease;
-}
-
-/* Buttons */
-
 .btn {
   padding: 0.85rem 1.75rem;
   border: none;
