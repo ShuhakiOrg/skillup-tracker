@@ -1,0 +1,46 @@
+/* src/styles/ThemeToggle.css */
+
+.theme-toggle-switch {
+  /* The track of the slider */
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  width: 64px;
+  padding: 4px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-switch:hover {
+  border-color: var(--primary-accent);
+}
+
+.theme-toggle-thumb {
+  /* The sliding thumb */
+  background-color: var(--primary-accent);
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  left: 4px; /* Initial position */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* When the switch has the 'dark' class, move the thumb to the right */
+.theme-toggle-switch.dark .theme-toggle-thumb {
+  transform: translateX(32px); /* Moves thumb to the right */
+}
+
+/* Style for the icons inside the thumb */
+.theme-toggle-thumb .icon {
+  color: var(--text-inverted);
+  font-size: 14px;
+}
