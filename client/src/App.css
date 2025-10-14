@@ -88,14 +88,18 @@ body {
 }
 
 .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+/* --- Enhanced Nav Logo ---
+  - Added a subtle text-shadow on hover for a gentle "glow" effect.
+  - Increased transition duration for a smoother feel.
+*/
 .nav-logo {
   color: var(--text-inverted);
   text-decoration: none;
@@ -119,6 +123,11 @@ body {
   gap: 0.5rem;
 }
 
+/* --- Enhanced Nav Link ---
+  - Set position to relative to act as a container for the ::after pseudo-element.
+  - Added an ::after pseudo-element to create an animated underline effect on hover.
+  - Added an .active class for styling the current page link.
+*/
 .nav-link {
   color: var(--text-inverted);
   text-decoration: none;
@@ -158,6 +167,146 @@ body {
 .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-2px);
+
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Ensures the pseudo-element doesn't spill out */
+}
+
+/* The animated underline */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: translateX(-101%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-link:hover::after {
+    transform: translateX(0);
+}
+
+/* Style for the active link (current page) */
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+.nav-link.active::after {
+    transform: translateX(0); /* Keep the underline visible */
+}
+
+/* Hamburger menu toggle - hidden on larger screens */
+.nav-toggle {
+    display: none;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    z-index: 1001; /* Must be above nav-menu */
+}
+
+/* --- Responsive Styles for Mobile --- */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%;
+        height: 100vh;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-menu.nav-menu--visible {
+        transform: translateX(0);
+    }
+
+    .nav-link {
+        font-size: 1.25rem;
+    }
+    
+    .nav-toggle {
+        display: block; /* Show the hamburger icon */
+        width: 25px;
+        height: 21px;
+        position: relative;
+    }
+    
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        content: '';
+        display: block;
+        background-color: white;
+        height: 3px;
+        width: 100%;
+        border-radius: 2px;
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+    }
+    
+    .hamburger::before {
+        top: -8px;
+    }
+    
+    .hamburger::after {
+        bottom: -8px;
+    }
+    
+    /* Animation for hamburger to 'X' */
+    .nav-toggle.is-active .hamburger {
+        background-color: transparent; /* Middle bar disappears */
+    }
+    
+    .nav-toggle.is-active .hamburger::before {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .nav-toggle.is-active .hamburger::after {
+        transform: translateY(-8px) rotate(-45deg);
+
+    }
+
+
+  }
+
+}
+
+.nav-link:hover::before {
+  transform: translateX(0);
+}
+
+.nav-link:hover::after {
+  transform: translateX(0);
+}
+
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.nav-link.active::after {
+  transform: translateX(0);
 }
 
 .nav-link:hover::before {
