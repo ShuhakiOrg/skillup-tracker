@@ -333,7 +333,11 @@ body {
     
     .nav-toggle.is-active .hamburger::after {
         transform: translateY(-8px) rotate(-45deg);
+
     }
+
+
+  }
 
 }
 
@@ -350,9 +354,11 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+
 .nav-link.active::after {
   transform: translateX(0);
 }
+
 
 /* --- 3. MAIN CONTENT & HOME PAGE --- */
 .main-content {
@@ -666,6 +672,99 @@ body.dark-theme .about-section::before {
     top: -12px;
   }
 }
+
+/* --- 4. FEATURES SECTION --- */
+.features-section {
+  padding: 4rem 2rem;
+  background: var(--bg-secondary);
+  margin-top: 2rem;
+  border-radius: 16px;
+}
+
+.features-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.features-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-headings);
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.features-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+
+.feature {
+  padding: 2rem;
+  background: var(--feature-bg);
+  color: var(--text-primary);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px var(--feature-hover-shadow);
+  border-color: var(--primary-accent);
+}
+
+.feature:hover::before {
+  transform: scaleX(1);
+}
+
+.feature h3 {
+  color: var(--text-headings);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.feature p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* --- 5. BUTTONS --- */
 
 
 /* --- 5. BUTTONS --- */

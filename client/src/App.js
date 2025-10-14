@@ -162,7 +162,9 @@ function Home() {
   </div>
 </section>
 
+
       <FAQ /> {/* FAQ component */}
+
 
     </div>
   );
