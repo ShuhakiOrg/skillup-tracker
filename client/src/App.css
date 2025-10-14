@@ -350,9 +350,11 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+
 .nav-link.active::after {
   transform: translateX(0);
 }
+
 
 /* --- 3. MAIN CONTENT & HOME PAGE --- */
 .main-content {
