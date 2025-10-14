@@ -15,6 +15,24 @@ import Stats from './components/Stats';
 import Testimonials from './components/Testimonials'; 
 
 
+import Footer from './components/Footer';
+import FAQ from './components/FAQ';
+import ThemeToggle from './components/ThemeToggle';
+testimonial
+import Stats from './components/Stats'; 
+import Testimonials from './components/Testimonials'; 
+
+import Footer from './components/Footer';
+import FAQ from './components/FAQ';
+
+main
+
+import Footer from './components/Footer';
+ main
+
+
+
+import BackToTopButton from './components/Backtotopbutton'; 
 function App() {
    const [theme, setTheme] = useState(() => {
     // Check localStorage for a saved theme, otherwise default to 'light'
